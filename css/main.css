@@ -138,4 +138,4 @@ input:checked::after {
 .done li input:checked ~ .fun5::after { content: " 🍿"; }
 .done li input:checked ~ .fun6::after { content: " 💸"; }
 .done li input:checked ~ .fun7::after { content: " 🍽️"; }
-.done li input:checked ~ .fun8::after { content: " ❄️"; }
+.done li input:checked ~ .fun8::after { content: " 🥶"; }
