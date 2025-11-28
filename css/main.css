@@ -18,9 +18,9 @@ main {
     flex-wrap: wrap;
 }
 
-header h1 {
+#main-title {
     text-align: center;
-    padding: 30px;
+    padding: 50px 20px 30px 20px;
 }
 
 article {
@@ -33,7 +33,7 @@ article {
 article > h2 {
     color: rgb(186, 184, 184);
     text-align: center;
-    padding: 4px 10px;   
+    padding: 4px 10px;
 }
 
 article:first-of-type {
@@ -86,8 +86,9 @@ input {
     background-color: #fff;
     border: 2px solid #fff;
     border-radius: 3px;
-    margin-right: 10px;
-    vertical-align: middle;
+    margin-top: 3px;
+    flex-shrink: 0;
+    display: inline-block;
     cursor: pointer;
 }
 
@@ -99,11 +100,6 @@ input:checked::after {
     text-align: center;
     line-height: 14px;
 }
-
-span {
-    display: inline;
-}
-
 
 .todo li,
 .inprogress li,
@@ -121,11 +117,25 @@ span {
 
 .done .fun {
     display: none;
-    flex-basis: 100%;   
-    margin-left: 28px;  
+    flex-basis: 100%;
+    margin-left: 28px;
     margin-top: 4px;
 }
 
 .done li input:checked ~ .fun {
     display: block;
 }
+
+.done li input:checked + .normal {
+    text-decoration: line-through;
+    opacity: 0.4;
+}
+
+.done li input:checked ~ .fun1::after { content: " ❤️"; }
+.done li input:checked ~ .fun2::after { content: " 💬"; }
+.done li input:checked ~ .fun3::after { content: " 😆"; }
+.done li input:checked ~ .fun4::after { content: " 😴"; }
+.done li input:checked ~ .fun5::after { content: " 🍿"; }
+.done li input:checked ~ .fun6::after { content: " 💸"; }
+.done li input:checked ~ .fun7::after { content: " 🍽️"; }
+.done li input:checked ~ .fun8::after { content: " ❄️"; }
