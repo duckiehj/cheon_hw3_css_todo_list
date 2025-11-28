@@ -6,7 +6,7 @@ body {
     background-attachment: fixed;
     background-color: rgba(0, 0, 0, 0.5);
     background-blend-mode: darken;
-    font-size: 16px;
+    font-size: 17px;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     color: #fff;
     margin: 0;
@@ -27,18 +27,17 @@ article {
     width: 410px;
     border: 4px solid white;
     border-radius: 10px;
-    margin: 10px 15px;
+    margin: 5px 12px;
 }
 
 article > h2 {
     color: rgb(186, 184, 184);
     text-align: center;
-    padding: 4px 30x;
+    padding: 4px 10px;   
 }
 
 article:first-of-type {
-    /* border: 4px solid gray; */
-    border-color:  rgb(186, 184, 184);
+    border-color: rgb(186, 184, 184);
 }
 
 #inprogress {
@@ -60,11 +59,11 @@ article:first-of-type {
 ul {
     list-style-type: none;
     padding-left: 0;
+    margin: 0;
 }
 
 ul li {
-    padding: 6px 8px;
-    text-transform: uppercase;
+    padding: 12px 17px;
 }
 
 .todo li:nth-child(odd) {
@@ -79,3 +78,54 @@ ul li {
     background-color: rgba(0, 255, 0, 0.5);
 }
 
+input {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 18px;
+    height: 18px;
+    background-color: #fff;
+    border: 2px solid #fff;
+    border-radius: 3px;
+    margin-right: 10px;
+    vertical-align: middle;
+    cursor: pointer;
+}
+
+input:checked::after {
+    content: "✔";
+    color: #111;
+    font-size: 14px;
+    display: block;
+    text-align: center;
+    line-height: 14px;
+}
+
+span {
+    display: inline;
+}
+
+
+.todo li,
+.inprogress li,
+.done li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.todo li input:checked + span,
+.inprogress li input:checked + span {
+    text-decoration: line-through;
+    opacity: 0.6;
+}
+
+.done .fun {
+    display: none;
+    flex-basis: 100%;   
+    margin-left: 28px;  
+    margin-top: 4px;
+}
+
+.done li input:checked ~ .fun {
+    display: block;
+}
